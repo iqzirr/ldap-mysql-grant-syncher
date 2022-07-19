@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ldap-syncher-test
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: ldap-syncher
+            image: rizqifireman/ldap-sql-syncher:0.1
+            imagePullPolicy: IfNotPresent
+            env:
+            - name: MYSQL_USER
+              value: "root"
+            - name: MYSQL_PASS
+              value: "myroot"
+            - name: MYSQL_HOST
+              value: "172.16.20.222"
+            - name: MYSQL_PORT
+              value: "3306"
+            - name: LDAP_USER
+              value: "uid=example,cn=users,dc=mydomain,dc=com"
+            - name: LDAP_HOST
+              value: "172.16.20.222"
+            - name: LDAP_PASS
+              value: "ldappassword"
+            - name: LDAP_PORT
+              value: "384"                 
+          restartPolicy: OnFailure
