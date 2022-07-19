@@ -20,4 +20,3 @@ do
         mariadb -h$MYSQL_HOST -u$MYSQL_USER -p$MYSQL_PASS -P $MYSQL_PORT -e "GRANT $grant ON $db.* TO '$user'@'%' ; FLUSH PRIVILEGES"
         ((counter++))
 done
-
