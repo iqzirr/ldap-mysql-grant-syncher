@@ -1,1 +1,1 @@
-# ldap-mysql-grant-syncher
+# LDAP MySQL Grant Syncher
