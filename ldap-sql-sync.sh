@@ -6,7 +6,7 @@ while [[ $i -le $usercount ]]
 do
     username[$i]=$(ldapsearch -x -D $LDAP_USER -h $LDAP_HOST -p $LDAP_PORT -w $LDAP_PASS -LLL "database=*" database databasePermission | grep dn | grep uid | sed -n $((i))p | tr "," "\n" | grep dn | awk '{print $2}' | cut -d "=" -f 2 )
     database[$i]=$(ldapsearch -x -D $LDAP_USER -h $LDAP_HOST -p $LDAP_PORT -w $LDAP_PASS -LLL "database=*" database | grep database | sed -n $((i))p | awk '{print $2}')
-    databasePermission[$i]=$(ldapsearch -x -D $LDAP_USER -h $LDAP_HOST -p $LDAP_PORT -w $LDAP_PASS -LLL "database=*" database databasePermission | grep databasePermission | sed -n $((i))p | awk '{print $2}')
+    databasePermission[$i]=$(ldapsearch -x -D $LDAP_USER -h $LDAP_HOST -p $LDAP_PORT -w $LDAP_PASS -LLL "database=*" databasePermission | grep databasePermission | sed -n $((i))p | awk '{print $2}')
     ((i++))
 done
 
