@@ -1,5 +1,11 @@
 # LDAP MySQL Grant Syncher
 
+##
+Requirements
+- bash
+- ldapclient (linux)
+- MariaDB Client
+
 ## Usage
 To use the script, make sure that we have custom attributes added to LDAP members (add this = database, and databasePermission).
 
