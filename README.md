@@ -1,7 +1,6 @@
 # LDAP MySQL Grant Syncher
 
-##
-Requirements
+## Requirements
 - bash
 - ldapclient (linux)
 - MariaDB Client
