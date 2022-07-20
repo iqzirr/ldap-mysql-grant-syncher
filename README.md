@@ -4,6 +4,9 @@
 - bash
 - ldapclient (linux)
 - MariaDB Client
+- MariaDB or MySQL user with admin privileges
+- MariaDB or MySQL server with LDAP-pam module configured
+
 
 ## Usage
 To use the script, make sure that we have custom attributes added to LDAP members (add this = database, and databasePermission).
